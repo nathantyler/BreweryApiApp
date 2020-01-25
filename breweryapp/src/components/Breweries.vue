@@ -1,7 +1,6 @@
 <template>
   <div class="list">
     <h1>Brewery List</h1>
-    <p>Here's the list:</p>
     <ul v-if="brewList && brewList.length">
       <li v-for="brewery of brewList" v-bind:key="brewery.id">
         <a v-if="brewery.images" v-bind:href="'/brewery/'+ brewery.id">
@@ -54,7 +53,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

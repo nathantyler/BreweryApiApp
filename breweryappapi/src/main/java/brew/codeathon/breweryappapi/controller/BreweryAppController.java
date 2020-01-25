@@ -10,10 +10,10 @@ import org.springframework.web.client.*;
 public class BreweryAppController {
 
     @Autowired
-    RestTemplate restTemplate;
+    private RestTemplate restTemplate;
 
-    String serviceURL = "http://api.brewerydb.com/v2/";
-    String key = "/?key=5865f650b89955e6f423714b51a83354";
+    private String serviceURL = "http://api.brewerydb.com/v2/";
+    private String key        = "/?key=5865f650b89955e6f423714b51a83354";
 
     @GetMapping("/list")
     public String getBreweryList() {
