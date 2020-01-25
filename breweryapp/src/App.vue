@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import router from './router.js'
+//import router from './router.js'
 
 export default {
   name: 'app',
-  router: router,
+  //router: router,
   components: {
     // Breweries
   }

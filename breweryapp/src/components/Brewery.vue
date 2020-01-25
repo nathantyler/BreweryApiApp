@@ -1,17 +1,20 @@
 <template>
   <div class="list">
     <h1>Beer List</h1>
-    <p v-if="beers && beers.length">Here's the list of beers:</p>
     <p v-if="!beers">(No beers found)</p>
     <ul v-if="beers && beers.length">
       <li v-for="beer of beers" v-bind:key="beer.id">
-        <p>
-          <strong>
-            <a v-bind:href="'/beer/'+ beer.id">{{beer.name}}</a>
-          </strong>
-        </p>
+        <a v-bind:href="'/beer/'+ beer.id">
+          <img v-if="beer.labels" :src="beer.labels.medium" :alt="beer.name" :title="beer.name" />
+        </a>
+        <br />
+        <strong>
+          <a v-bind:href="'/beer/'+ beer.id">{{beer.name}}</a>
+        </strong>
+
         <p>{{beer.style.description}}</p>
-        <br/>
+        <hr style="width:100%" />
+        <br />
       </li>
     </ul>
   </div>

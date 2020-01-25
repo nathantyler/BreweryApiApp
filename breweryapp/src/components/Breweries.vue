@@ -4,13 +4,23 @@
     <p>Here's the list:</p>
     <ul v-if="brewList && brewList.length">
       <li v-for="brewery of brewList" v-bind:key="brewery.id">
+        <a v-if="brewery.images" v-bind:href="'/brewery/'+ brewery.id">
+          <img
+            v-if="brewery.images"
+            :src="brewery.images.medium"
+            :alt="brewery.name"
+            :title="brewery.name"
+          />
+        </a>
         <p>
-          <strong>
+          <strong v-if="!brewery.images">
             <a v-bind:href="'/brewery/'+ brewery.id">{{brewery.name}}</a>
           </strong>
         </p>
         <p v-if="brewery.description">{{brewery.description}}</p>
+        <p v-if="!brewery.description">(No description given)</p>
         <br v-if="brewery.description" />
+        <hr style="width:100%">
       </li>
     </ul>
   </div>
